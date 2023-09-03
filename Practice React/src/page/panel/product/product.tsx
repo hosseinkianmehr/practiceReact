@@ -1,8 +1,8 @@
 
-const login = () => {
+const Product = () => {
     return (
       <div>main</div>
     )
   }
   
-  export default login
+  export default Product

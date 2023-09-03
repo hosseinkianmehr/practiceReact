@@ -1,19 +1,19 @@
 
+import { ThemeProvider } from '@emotion/react'
 import './App.css'
-import { useAppDispatch, useAppSelector } from './store/hook'
-import { themeStore } from './store/theme'
-
+import { Page } from './page'
+import {  useAppSelector } from './store/hook'
+import { getTheme } from './theme'
 function App() {
-const dispatch = useAppDispatch()
 const select = useAppSelector(state => state.theme.dark)
-const handel =()=>{dispatch(themeStore.dark({dark:select?false:true}));}
-console.log(select)
+const theme = getTheme(select)
   return (
-    <>
-    <button onClick={handel}>click</button>
-      <div>hello</div>
+<ThemeProvider theme={theme }>
+
+    <Page/>
       <p>{select?'dark':'ligth'}.type</p>
-    </>
+    
+</ThemeProvider>
   )
 }
 
