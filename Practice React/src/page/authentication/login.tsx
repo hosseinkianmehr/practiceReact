@@ -1,8 +1,9 @@
+import { LoginPage } from "../../component/Login/LoginPage"
 
-const login = () => {
+const Login = () => {
     return (
-      <div>main</div>
+      <LoginPage/>
     )
   }
   
-  export default login
+  export default Login
