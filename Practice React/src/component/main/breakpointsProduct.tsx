@@ -2,10 +2,13 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-import { Box, Card, ImageListItem, ImageListItemBar } from '@mui/material'
+import { Box, Card, ImageListItem, ImageListItemBar, Typography } from '@mui/material'
 import MediaCard from '../card';
+import { useGetProducts } from '../../query';
 
 export const BreakpointsProduct = () => {
+    const {data}=useGetProducts()
+    console.log(data)
     return (
         <>
             <Box sx={{width: '80vw', height: 400 }} style={{justifyContent:'center',alignItems:'center'}}>
@@ -37,15 +40,16 @@ export const BreakpointsProduct = () => {
                     
                     className="mySwiper"
                 >
-                    {[1, 2, 3,4 ,5, 345 ,543,3 ,53].map(() => {
+                    {data && data.map((a,index) => {
                         return (
-                            <SwiperSlide >
-                                <MediaCard/>
+                            <SwiperSlide key={index} >
+                                <MediaCard data={a}/>
                             
                             </SwiperSlide>
                         )
                     })}
                 </Swiper>
+                
             </Box>
         </>
     );
