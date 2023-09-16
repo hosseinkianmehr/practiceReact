@@ -14,13 +14,13 @@ export const BreakpointsProduct = () => {
             <Box sx={{width: '80vw', height: 400 }} style={{justifyContent:'center',alignItems:'center'}}>
                 <Swiper 
                     slidesPerView={0}
-                    spaceBetween={0}
+                    spaceBetween={10}
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
                             spaceBetween: 40,
                         },
-                        440: {
+                        400: {
                         slidesPerView: 1,
                         spaceBetween: 20,
                     },

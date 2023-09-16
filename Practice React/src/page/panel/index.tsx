@@ -17,8 +17,8 @@ const Panel = () => {
       <Routes>
         <Route path="dashbord/" element={<Dashboard />} />
         <Route path="dashbord/store" element={<Dashboard />} />
-        <Route path='/:product/:name' element={<Product />} />
-        <Route path='/:product' element={<Products />} />
+        <Route path='/:product/:id' element={<Product />} />
+        <Route path='/product' element={<Products />} />
         <Route path='' element={<Main />} />
       </Routes>
       </div>

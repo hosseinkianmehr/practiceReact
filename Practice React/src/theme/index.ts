@@ -76,14 +76,7 @@ export const getTheme = (dark: boolean) => {
             fontSize: 13
          },
          components: {
-            MuiDataGrid: {
-               defaultProps: {
-                  style: {backgroundColor: palette.background?.default},
-                  slots: {
-                     
-                  }
-               }
-            },
+            
             MuiSkeleton: {
                styleOverrides: {
                   root: {
