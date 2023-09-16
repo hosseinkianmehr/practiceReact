@@ -1,12 +1,11 @@
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from './user/dashboard'
 import Product from './product/product'
 import Products from './product/products'
 import Main from './main'
-import { Page } from '..'
 import Footer from '../../component/footer/footer'
 import { Header } from '../../component/header/header'
+import Notfind from './Notfind'
 
 const Panel = () => {
   return (
@@ -20,6 +19,7 @@ const Panel = () => {
         <Route path='/:product/:id' element={<Product />} />
         <Route path='/product' element={<Products />} />
         <Route path='' element={<Main />} />
+        <Route path='*' element={<Notfind />} />
       </Routes>
       </div>
     <Footer/>

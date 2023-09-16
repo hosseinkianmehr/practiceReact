@@ -10,6 +10,7 @@ import { FormControlLabel } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '../../store/hook';
 import { themeStore } from '../../store/theme';
 import ThemeToggleButton from './swichDark';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const dispatch = useAppDispatch()
@@ -33,9 +34,15 @@ const handelDark =()=>{
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Login</Button>
+          <Link to={''}>
+          <Button color="inherit">best shop</Button>
+          </Link>
+          <Link to={'/product'}>
+          <Button color="inherit">product</Button>
+          </Link>
+          <Link to={'/'}>
+          <Button color="inherit">home</Button>
+          </Link>
       </Toolbar>
     </AppBar>
   )

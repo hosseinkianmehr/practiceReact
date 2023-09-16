@@ -5,6 +5,7 @@ import { Pagination } from 'swiper/modules';
 import { Box, Card, ImageListItem, ImageListItemBar, Typography } from '@mui/material'
 import MediaCard from '../card';
 import { useGetProducts } from '../../query';
+import { Link } from 'react-router-dom';
 
 export const BreakpointsProduct = () => {
     const {data}=useGetProducts()
@@ -43,7 +44,9 @@ export const BreakpointsProduct = () => {
                     {data && data.map((a,index) => {
                         return (
                             <SwiperSlide key={index} >
+                                <Link to={`/product/${a.id}`} preventScrollReset={true} >
                                 <MediaCard data={a}/>
+                                </Link>
                             
                             </SwiperSlide>
                         )

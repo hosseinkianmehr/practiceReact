@@ -1,8 +1,7 @@
-import { PickerComponents } from '@mui/x-date-pickers/themeAugmentation';
-import { DataGridComponents } from '@mui/x-data-grid/themeAugmentation';
+
 import {createTheme, PaletteOptions} from "@mui/material"
 
-export const getPalette = (dark: boolean): PaletteOptions & DataGridComponents & PickerComponents => {
+export const getPalette = (dark: boolean): PaletteOptions => {
    if (dark)
       return {
          mode: "dark",
@@ -126,12 +125,7 @@ export const getTheme = (dark: boolean) => {
          fontSize: 13
       },
       components: {
-         MuiDataGrid: {
-            defaultProps: {
-               style: {backgroundColor: palette.background?.default},
-               
-            }
-         },
+         
          MuiSkeleton: {
             styleOverrides: {
                root: {
