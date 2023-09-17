@@ -1,9 +1,8 @@
-import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCreative } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-creative';
-import { Box, ImageListItem, ImageListItemBar, Typography } from '@mui/material'
+import { Box, ImageListItem, ImageListItemBar,  } from '@mui/material'
 
 // import required modules
 
@@ -25,9 +24,9 @@ export const SwiperHeader = () => {
                 modules={[EffectCreative]}
                 className="mySwiper"
             >
-                {[1, 2, 3].map(() => {
+                {[1, 2, 3].map((i) => {
                     return (
-                        <SwiperSlide >
+                        <SwiperSlide key={i} >
                             <ImageListItem>
                             <ImageListItemBar
                                     title={'sefdf'}
