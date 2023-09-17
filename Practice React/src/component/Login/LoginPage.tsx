@@ -1,7 +1,8 @@
 import { TextField, Stack ,Button} from '@mui/material'
 import { useForm } from 'react-hook-form'
-import { useAppDispatch } from '../../store/hook'
+import { useAppDispatch, useAppSelector } from '../../store/hook'
 import { login } from '../../store/auth'
+import { useNavigate } from 'react-router-dom'
 
 export const LoginPage = () => {
   const { register, handleSubmit } = useForm()
@@ -10,6 +11,13 @@ export const LoginPage = () => {
     //console.log(JSON.stringify(data))
     dispatch(login( data )) 
   }
+  const success = useAppSelector((state) => state.auth.islogin)
+
+  const navigate = useNavigate()
+    if (success) {
+        navigate('/')
+    }
+
   return (
     <Stack
     height={'100vh'}

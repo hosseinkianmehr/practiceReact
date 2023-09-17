@@ -26,6 +26,7 @@ export const login = createAsyncThunk("auth/login", async (data: object) => {
 const initialState = {
   token: '',
   istoken: false,
+  islogin: false,
   user : {}
 }
 export const authslice = createSlice({
@@ -36,18 +37,22 @@ export const authslice = createSlice({
       .addCase(login.fulfilled, (state, action: PayloadAction<loginSuccessResponse>) => {
         state.token = action.payload.token,
         state.istoken = true;
+        state.islogin= true;
         localStorage.setItem("token", action.payload.token)
       })
 
   }
   ,
   reducers: {
-    logout: () => {
+    logout: (state) => {
       localStorage.removeItem("token");
+      state.islogin= false;
+
     },
     login: (state, action) => {
       state.istoken = true;
-      state.user = action.payload
+      state.user = action.payload;
+      state.islogin= true;
       console.log(action.payload,'action.payload.decodedToken')
     }
   }
